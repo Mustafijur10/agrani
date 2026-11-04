@@ -3,6 +3,10 @@
 /* Tailwind v4: class-based dark mode (toggled by the header button) */
 @custom-variant dark (&:where(.dark, .dark *));
 
+/* Make sure Tailwind always scans the contact page files */
+@source "../app/contact";
+@source "../components/contact";
+
 @media (prefers-reduced-motion: reduce) {
   * { transition: none !important; scroll-behavior: auto !important; }
 }

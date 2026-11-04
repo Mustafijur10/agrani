@@ -11,7 +11,11 @@ const links = [
   { label: "About Us", href: "/about" },
   { label: "Product and Services", href: "/services" },
   { label: "Others", href: "#", children: [
-    { label: "Blog", href: "/blog" }, { label: "Legal", href: "/legal" },
+    { label: "Blog", href: "/blog" },
+    { label: "Why Choose Us", href: "/why-choose-us" },
+    { label: "Our Expertise", href: "/our-expertise" },
+    { label: "Customer Experience", href: "/customer-experience" },
+    { label: "Case Studies", href: "/case-studies" },
   ]},
   { label: "Career", href: "/career" },
   { label: "Contact Us", href: "/contact" },
@@ -47,9 +51,9 @@ export default function Header() {
                     {l.children && <ChevronDown size={16} />}
                   </Link>
                   {l.children && (
-                    <ul className="invisible absolute left-0 top-full min-w-32 rounded-xl bg-white p-2 opacity-0 shadow-lg transition group-hover:visible group-hover:opacity-100 group-focus-within:visible group-focus-within:opacity-100 dark:bg-[#161818]">
+                    <ul className="invisible absolute left-0 top-full min-w-44 rounded-xl bg-white p-2 opacity-0 shadow-lg transition group-hover:visible group-hover:opacity-100 group-focus-within:visible group-focus-within:opacity-100 dark:bg-[#161818]">
                       {l.children.map((c) => (
-                        <li key={c.label}><Link href={c.href} className="block rounded-lg px-3 py-2 hover:bg-black/5 dark:hover:bg-white/10">{c.label}</Link></li>
+                        <li key={c.label}><Link href={c.href} className="block whitespace-nowrap rounded-lg px-3 py-2 hover:bg-black/5 dark:hover:bg-white/10">{c.label}</Link></li>
                       ))}
                     </ul>
                   )}
