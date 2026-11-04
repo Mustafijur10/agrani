@@ -1,0 +1,9 @@
+/* --- About page: testimonial marquee (append to app/globals.css) --- */
+@keyframes marquee { to { transform: translateX(-50%); } }
+/* top row: moves left. .marquee-reverse (bottom row): moves right. */
+.marquee-track { animation: marquee 40s linear infinite; will-change: transform; }
+.marquee-reverse { animation-direction: reverse; }
+.marquee:hover .marquee-track { animation-play-state: paused; }
+@media (prefers-reduced-motion: reduce) {
+  .marquee-track { animation: none; }
+}
