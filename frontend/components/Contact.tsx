@@ -2,13 +2,10 @@
 import { useState } from "react";
 import { ChevronDown } from "lucide-react";
 import { gradient, container } from "./ui";
+import PhoneField from "./PhoneField";
 
 const field =
   "mt-1 h-14 w-full rounded-xl border border-black/10 bg-[#FCFCFC] px-4 text-[#051012] outline-none focus:border-[#F05827] focus:ring-2 focus:ring-[#F05827]/30";
-
-// One bordered box that holds several controls (used for the phone field).
-const shell =
-  "mt-1 flex h-14 w-full items-center rounded-xl border border-black/10 bg-[#FCFCFC] text-[#051012] focus-within:border-[#F05827] focus-within:ring-2 focus-within:ring-[#F05827]/30";
 
 // Multi-stop mesh gradient matching the design: orange top-left, grey-blue top,
 // cream top-right, strong orange right, sand bottom-left.
@@ -68,31 +65,7 @@ export default function Contact() {
           <div className="mt-4 grid gap-4 text-sm text-[#3C3C3C] sm:grid-cols-2 dark:text-[#B9B9B9]">
             <label>First name *<input name="firstName" required className={field} /></label>
             <label>Last name *<input name="lastName" required className={field} /></label>
-            {/* Phone: ONE field = country code + number (matches the Figma) */}
-            <div>
-              <label htmlFor="contact-phone">Phone Number</label>
-              <div className={shell}>
-                <div className="relative h-full shrink-0 border-r border-black/10">
-                  <select
-                    name="dial"
-                    aria-label="Country code"
-                    defaultValue="+880"
-                    className="h-full w-[92px] cursor-pointer appearance-none rounded-l-xl bg-transparent pl-4 pr-8 outline-none"
-                  >
-                    {["+880", "+971", "+91", "+1", "+44"].map((c) => <option key={c}>{c}</option>)}
-                  </select>
-                  <ChevronDown aria-hidden size={16} className="pointer-events-none absolute right-3 top-1/2 -translate-y-1/2 text-[#6B6B6B]" />
-                </div>
-                <input
-                  id="contact-phone"
-                  name="phone"
-                  type="tel"
-                  inputMode="tel"
-                  autoComplete="tel-national"
-                  className="h-full min-w-0 flex-1 bg-transparent px-4 outline-none"
-                />
-              </div>
-            </div>
+            <PhoneField />
 
             <div>
               <label htmlFor="contact-city">City</label>
