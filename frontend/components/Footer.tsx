@@ -10,7 +10,7 @@ const nav = [
 ];
 const socials = [["Facebook", "#"], ["Twitter", "#"], ["Linkedin", "#"]];
 
-export default function Footer() {
+export default async function Footer() {
   "use cache";
   return (
     <footer className="pt-16 text-[#051012] dark:bg-[#161818] dark:text-white">
