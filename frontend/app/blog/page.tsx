@@ -12,7 +12,7 @@ export const metadata: Metadata = {
 };
 
 const PAGE_SIZE = 8;
-
+export const instant = false;
 export default async function BlogPage({ searchParams }: { searchParams: Promise<{ category?: string; page?: string }> }) {
   const sp = await searchParams;
   const category = categories.find((c) => c.slug === sp.category) ?? categories[0];
