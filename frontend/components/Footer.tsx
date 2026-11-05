@@ -11,6 +11,7 @@ const nav = [
 const socials = [["Facebook", "#"], ["Twitter", "#"], ["Linkedin", "#"]];
 
 export default function Footer() {
+  "use cache";
   return (
     <footer className="pt-16 text-[#051012] dark:bg-[#161818] dark:text-white">
       <div className={`${container} grid gap-12 lg:grid-cols-2`}>
@@ -24,7 +25,7 @@ export default function Footer() {
           <h2 className="mt-12 text-xl">Our Location</h2>
           <address className="mt-4 space-y-3 not-italic text-[#3C3C3C] dark:text-[#B9B9B9]">
             <p>Plot-174/176, Road-02, Avenue-01, Mirpur DOHS, Dhaka-1216, Bangladesh</p>
-            <p><a href="https://www.agranitechbd.com" className="underline">www.agranitechbd.com</a></p>
+            <a href="https://www.agranitechbd.com" className="underline">www.agranitechbd.com</a>
             <p className="flex flex-wrap gap-x-8"><a href="tel:+8809610944449">+880-9610944449</a><a href="mailto:info@agranitechbd.com">info@agranitechbd.com</a></p>
             <p>Mon-Fri 9am-6pm</p>
           </address>
@@ -57,7 +58,7 @@ export default function Footer() {
       </div>
 
       <div className={`${container} mt-16 flex flex-wrap justify-between gap-4 border-t border-black/20 py-8 text-sm dark:border-white/20`}>
-        <p>Copyright @{new Date().getFullYear()} Agrani Technologies</p>
+        <p>Copyright @2026 Agrani Technologies</p>
         <ul className="flex gap-8">
           {[["Refund Policy", "/refund"], ["Terms & Conditions", "/terms"], ["Privacy Policy", "/privacy"]].map(([l, h]) => <li key={l}><Link href={h}>{l}</Link></li>)}
         </ul>
