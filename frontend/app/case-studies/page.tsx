@@ -12,7 +12,7 @@ export const metadata: Metadata = {
 
 // Design frame: 1440px wide with 100px side margins → 1240px content width.
 const wrap = "mx-auto w-full max-w-[1240px] px-5 xl:px-0";
-
+export const instant = false;
 export default async function CaseStudiesPage({ searchParams }: { searchParams: Promise<{ page?: string }> }) {
   const sp = await searchParams;
   const totalPages = Math.max(1, Math.ceil(caseStudies.length / CASE_STUDIES_PAGE_SIZE));
